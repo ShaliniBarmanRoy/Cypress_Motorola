@@ -8,7 +8,7 @@
 
 2. On installing 17th version, when I tried to run the component test script in Cypress UI, I got the below issue
 
-"The following error originated from your test code, not from Cypress.
+The following error originated from your test code, not from Cypress.
 
 > Cannot read properties of undefined (reading 'None')
 
@@ -16,9 +16,45 @@ When Cypress detects uncaught errors originating from your test code it will aut
 
 Cypress could not associate this error to any specific test.
 
-ERROR in ../../node_modules/@angular/common/fesm2022/common.mjs 2913:14-34
-export 'ɵɵInputFlags' (imported as 'i0') was not found in '@angular/core' (possible exports: ANIMATION_MODULE_TYPE, APP_BOOTSTRAP_LISTENER, APP_ID, APP_INITIALIZER, AfterRenderPhase, ApplicationInitStatus, ApplicationModule, ApplicationRef, Attribute, COMPILER_OPTIONS, CSP_NONCE, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, ChangeDetectorRef, Compiler, ....."
+We dynamically generated a new test to display this failure.
+../node_modules/@angular/common/fesm2022/common.mjs:65:101
+  63 |         throw new Error('Not implemented');
+  64 |     }
+> 65 |     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.0", ngImport: i0, type: PlatformLocation, deps: [], target: i0.ɵɵFactoryTarget.Injectable }); }
+     |                                                                                                     ^
+  66 |     static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.0.0", ngImport: i0, type: PlatformLocation, providedIn: 'platform', useFactory: () => inject(BrowserPlatformLocation) }); }
+  67 | }
+  68 | i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.0", ngImport: i0, type: PlatformLocation, decorators: [{ 
+View stack trace
+ Print to console
+    at <static_initializer> (webpack://angular/../../node_modules/@angular/common/fesm2022/common.mjs:65:100)
+    at 4647 (webpack://angular/../../node_modules/@angular/common/fesm2022/common.mjs:2578:20)
+    at __webpack_require__ (http://localhost:8080/__cypress/src/runtime.js:23:42)
+    at 8989 (http://localhost:8080/__cypress/src/cypress-support-file.js:103:73)
+    at __webpack_require__ (http://localhost:8080/__cypress/src/runtime.js:23:42)
+    at 9896 (http://localhost:8080/__cypress/src/cypress-support-file.js:61:73)
+    at Function.__webpack_require__ (http://localhost:8080/__cypress/src/runtime.js:23:42)
+    at _ZoneDelegate.invoke (http://localhost:8080/__cypress/src/polyfills.js:8173:158)
+    at Zone.run (http://localhost:8080/__cypress/src/polyfills.js:7958:35)
+    at <unknown> (http://localhost:8080/__cypress/src/polyfills.js:9033:28)
+From previous event:
+    at Promise.longStackTracesCaptureStackTrace [as _captureStackTrace] (http://localhost:8080/__cypress/runner/cypress_runner.js:3486:19)
+    at Promise._then (http://localhost:8080/__cypress/runner/cypress_runner.js:1239:17)
+    at Promise.then (http://localhost:8080/__cypress/runner/cypress_runner.js:1132:17)
+    at runScriptsFromUrls (http://localhost:8080/__cypress/runner/cypress_runner.js:111321:136)
+    at Object.runScripts (http://localhost:8080/__cypress/runner/cypress_runner.js:111362:12)
+    at $Cypress.onSpecWindow (http://localhost:8080/__cypress/runner/cypress_runner.js:40889:67)
+    at init (http://localhost:8080/__cypress/src/cypress-entry.js:63:11)
+    at 7053 (http://localhost:8080/__cypress/src/cypress-entry.js:38:3)
+    at __webpack_require__ (http://localhost:8080/__cypress/src/runtime.js:23:42)
+    at render (http://localhost:8080/__cypress/src/cypress-entry.js:80:3)
+    at 2962 (http://localhost:8080/__cypress/src/cypress-entry.js:82:1)
+    at __webpack_require__ (http://localhost:8080/__cypress/src/runtime.js:23:42)
+    at __webpack_exec__ (http://localhost:8080/__cypress/src/cypress-entry.js:7912:48)
+    at <unknown> (http://localhost:8080/__cypress/src/cypress-entry.js:7913:60)
+    at webpackJsonpCallback (http://localhost:8080/__cypress/src/runtime.js:316:39)
+    at <unknown> (http://localhost:8080/__cypress/
 
 3.Hence I have created a new package.json, with angular dependencies' version mentioned as "17.0.0", as we are unable to install the dependencies  with version 17.3.0
-
+4. Even on extracting fresh project and executing "npm install"  under project path,  I am getting 17.0.0 version rather the version mentioned in package.json
 4. Please let me know, if possible, what are the required dependencies' with version needed to run the component testing
