@@ -1,7 +1,7 @@
 import dashboardPage from "../e2e/dashboardPage"
 import heroPage from "../e2e/heroPage"
 
-describe('Launch Application', function() {
+describe('Launch Application_endtoend', function() {
  let data;
   before(() =>
   {
@@ -14,7 +14,7 @@ data = fdata
 
 
   
-    it('Test1 -- LAUNCH APPLICATION', () => {
+    it('Test1 -- EndToEndTestingForHeroAddition', () => {
       const dashPage = new dashboardPage()
       const hPage = new heroPage()
       cy.visit('')
