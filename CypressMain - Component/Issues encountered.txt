@@ -1,0 +1,24 @@
+1. npm install----- When we tried to configure this project with component testing in Cypress UI after  executing npm install, the Cypress UI prompted to install 17th or less version for the below dependencies, as by default  after executing npm install , the 18th version of the mentioned dependencies got installed
+
+@angular/cli
+@angular-devkit/build-angular
+@angular/core
+@angular/common
+@angular/platform-browser-dynamic
+
+2. On installing 17th version, when I tried to run the component test script in Cypress UI, I got the below issue
+
+"The following error originated from your test code, not from Cypress.
+
+> Cannot read properties of undefined (reading 'None')
+
+When Cypress detects uncaught errors originating from your test code it will automatically fail the current test.
+
+Cypress could not associate this error to any specific test.
+
+ERROR in ../../node_modules/@angular/common/fesm2022/common.mjs 2913:14-34
+export 'ɵɵInputFlags' (imported as 'i0') was not found in '@angular/core' (possible exports: ANIMATION_MODULE_TYPE, APP_BOOTSTRAP_LISTENER, APP_ID, APP_INITIALIZER, AfterRenderPhase, ApplicationInitStatus, ApplicationModule, ApplicationRef, Attribute, COMPILER_OPTIONS, CSP_NONCE, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy, ChangeDetectorRef, Compiler, ....."
+
+3.Hence I have created a new package.json, with angular dependencies' version mentioned as "17.0.0", as we are unable to install the dependencies  with version 17.3.0
+
+4. Please let me know, if possible, what are the required dependencies' with version needed to run the component testing
