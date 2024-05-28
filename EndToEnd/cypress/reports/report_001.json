@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-27T23:43:42.887Z",
+    "end": "2024-05-27T23:44:11.499Z",
+    "duration": 28612,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bb7c4281-8f57-4f06-88c4-7abc7168de23",
+      "title": "",
+      "fullFile": "cypress\\e2e\\firstTest.cy.js",
+      "file": "cypress\\e2e\\firstTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a829e6e3-da33-4a0f-873e-3202fa5dd71e",
+          "title": "Launch Application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test1 -- LAUNCH APPLICATION",
+              "fullTitle": "Launch Application Test1 -- LAUNCH APPLICATION",
+              "timedOut": null,
+              "duration": 28556,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const dashPage = new _dashboardPage.default();\nconst hPage = new _heroPage.default();\ncy.visit('');\ncy.screenshot();\ndashPage.getSearchBox().type(data.nameofSH);\n// cy.xpath('//input[@id=\"search-box\"]').type('Superman')\ncy.screenshot();\nif (dashPage.getMessage().contains(' HeroService: no heroes matching \"' + data.nameofSH + '\" ')) {\n  cy.log('Element found: HeroService: no heroes matching');\n  cy.screenshot();\n  dashPage.getClearButton().click();\n  // cy.xpath('//button[text()=\" Clear Messages \"]').click()  \n  cy.screenshot();\n  dashPage.getHeroTab().click();\n  // cy.xpath('//a[text()=\" Heroes \"]').click()\n  cy.screenshot();\n  hPage.getHeroNameBox().type(data.nameofSH);\n  cy.screenshot();\n  hPage.getAddHeroButton().click();\n  cy.screenshot();\n  cy.wait(8000);\n  // cy.xpath('//a[text()=\" Superman \"]').should('exist')\n  cy.xpath(`//a[text()=\" ${data.nameofSH} \"]`).should('exist');\n  cy.screenshot();\n  cy.xpath(`//a[text()=\" ${data.nameofSH} \"]/../..//button`).click();\n  cy.screenshot();\n}",
+              "err": {},
+              "uuid": "8d5c919a-2fab-4e29-9a62-7aa842d78f90",
+              "parentUUID": "a829e6e3-da33-4a0f-873e-3202fa5dd71e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8d5c919a-2fab-4e29-9a62-7aa842d78f90"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 28556,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
