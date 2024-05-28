@@ -57,4 +57,5 @@ From previous event:
 
 3.Hence I have created a new package.json, with angular dependencies' version mentioned as "17.0.0", as we are unable to install the dependencies  with version 17.3.0
 4. Even on extracting fresh project and executing "npm install"  under project path,  I am getting 17.0.0 version rather the version mentioned in package.json
-4. Please let me know, if possible, what are the required dependencies' with version needed to run the component testing
+6. I have  uninstalled all the dependencies and tried to install the 17.3.0 version , but  unable to install them.
+5. Please let me know, if possible, what are the required dependencies' with version needed to run the component testing
